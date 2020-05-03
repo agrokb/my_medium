@@ -1,0 +1,33 @@
+<h2 class="title is-2">ログイン</h2>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="field">
+      <label>メール</label><br/>
+        <div class="columns">
+          <div class="control is-two-thirds column">
+          <%= f.email_field :email, autofocus: true, autocomplete: "email" ,class:"input is-success" %>
+          </div>
+        </div>
+  </div>
+
+  <div class="field">
+    <label>パスワード</label><br />
+    <div class="columns">
+      <div class="control is-two-thirds column">
+          <%= f.password_field :password, autocomplete: "current-password",class:"input is-success" %>
+      </div>
+    </div>
+  </div>
+
+  <% if devise_mapping.rememberable? %>
+    <div class="field">
+      <%= f.check_box :remember_me ,class:"checkbox"%>
+      <%= f.label "登録資料保留" ,class:"checkbox" %>
+    </div>
+  <% end %>
+  <div class="actions buttons">
+    <%= f.submit "ログイン",class:"button is-primary" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>

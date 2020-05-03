@@ -1,0 +1,18 @@
+<h2 class="title is-2">パスワード忘れますか？</h2>
+
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field">
+    <%= f.label "メール" %><br />
+      <div class="columns">
+        <div class="control is-two-fifths column">
+          <%= f.email_field :email, autofocus: true, autocomplete: "email",class:"input is-success" %>
+        </div>
+  　　</div>
+  </div>
+  <div class="actions">
+    <%= f.submit "メールに送信する",class: "button is-primary"%>
+  </div>
+<% end %>
+
