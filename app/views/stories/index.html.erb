@@ -1,0 +1,10 @@
+<h1 class="title">記事リスト</h1>
+
+<% @stories.each do |story| %>
+ <h2 class="title"><%= story.title %></h2>
+ <p><%= story.content %></p>
+ <p>last edit time <%= time_ago_in_words(story.updated_at) %></p>
+ <%= link_to "edit",edit_story_path(story),class: 'button is-text is-small' %>
+ <%= link_to "delete",story,method:"delete",data:{ confirm:'確認刪除'} ,class: 'button is-danger is-small'%>
+ <hr>
+<% end %>

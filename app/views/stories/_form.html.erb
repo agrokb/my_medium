@@ -1,0 +1,15 @@
+<%= form_for(story) do |form| %>
+ <div class="field">
+  <%= form.label :title, "テーマ" %>
+  <%= form.text_field :title, class:"input is-primary is-medium" %>
+ </div>
+ <div class="field">
+  <%= form.label :title, "内容" %>
+  <%= form.text_area :content,rows:10, class:"textarea is-primary is-medium" %>
+ </div>
+ <div class="field">
+  <%= form.submit '未完成保存', class:'button is-dark' %>
+  <%= form.submit '投稿', class:'button is-primary' %>
+ </div>
+
+<% end %>
